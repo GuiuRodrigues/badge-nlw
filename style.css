@@ -1,15 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 *{
    margin: 0;
+   padding: 0;
 }
 
 html,body{
+   --dark-grey: #202024;
    --black: hsl(240, 6%, 13%);
-   --grey: hsl(240,9%,89%);
+   --grey: #f1f1f1;
 
+   background: url("images/background.webp");
+   background-color: #121214;
+   background-repeat: no-repeat;
 
-height: 100%;
-font-family: 'Roboto', sans-serif;
--webkit-font-smoothing: antialiased;
+   width: 100%;
+   height: 100%;
+   font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: antialiased;
 }
 
 body{
@@ -18,63 +26,213 @@ body{
 }
 
 main{
-   background: url(images/background.svg);
-   width: 375px;
-   height: 812px;
+   background: url(images/background.png) no-repeat center/cover;
+   min-height: 812px;
+   width: 100vw;
+   height: 100vh;
+   color: var(--grey);
+   position: relative;
 }
 
-.container{
-   max-width: 250px;
-   margin-left:auto ;
-   margin-right: auto;
+.loader {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background: var(--dark-grey);
+   position: absolute;
+   z-index: 9;
+ }
+
+.loader img {
+   width: 400px;
+   height: 400px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-65%, -50%);
+ }
+
+ .loader.hidden {
+   display: none;
+   opacity: 0;
+ }
+
+
+.content{
+   position: absolute;
+   width: 15.5rem;
+   height: 50.75rem;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
    text-align: center;
-   color: var(--grey);
+   opacity: 0;
+ 
+   transition: opacity 1s;
+   /*color: var(--grey);*/
 }  
 
-.avatar{
-   width:10rem;
-   margin: 11.5rem auto 0 ;
+.content.visible {
+   opacity: 1;
+ }
+ 
+ .content .badge {
+   display: none;
+ }
 
-   position:relative;
-}
+ .avatar {
+   position: relative;
+   width: 10rem;
+   margin: 9rem auto 0;
+ }
 
-.avatar span{
-   position:absolute;
-   top:-15px;
-   z-index: 1 ;
-}
-.avatar > img{
-   width:10rem;
-   height:11.5rem;
-   object-fit:cover;
+.avatar span {
+   position: absolute;
+   left: -15px;
+   top: -15px;
+   z-index: 1;
+ }
+.avatar > img {
+   width: 10rem;
+   height: 11.5rem;
+   object-fit: cover;
    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+ }
 
-}
+ .animate__animated animate__bounce {
+   animation: animate__bounceIn;
+ }
 
 h1{
    font-size: 1.5rem;
    margin-top: 1.5rem;
 }
 
-a{
+a {
    color: var(--grey);
    text-decoration: none;
    margin-top: 0.25rem;
+ 
    display: flex;
+   flex-direction: row-reverse;
    gap: 0.75rem;
    justify-content: center;
    align-items: center;
-}
+ }
 
-p{
+.content > p {
    margin-top: 2rem;
-}
+ }
 
-ul{
-   margin-top: 4rem;
+ul {
+   margin-top: 3rem;
    list-style: none;
    padding: 0;
    display: flex;
-   gap: 0.5rem;
    justify-content: center;
+   align-items: center;
+   gap: 0.5rem;
+ }
+
+ .youtube {
+   text-align: center;
+   background-color: #323238;
+   border-radius: 5px;
+ }
+ 
+ .youtube:hover {
+   background-color: #ff0000;
+ }
+ 
+ .facebook {
+   text-align: center;
+   background-color: #323238;
+   border-radius: 5px;
+ }
+ 
+ .facebook:hover {
+   background-color: #1031c4;
+ }
+ 
+ .instagram {
+   text-align: center;
+   background-color: #323238;
+   border-radius: 5px;
+ }
+ 
+ .instagram:hover {
+   background-color: #c13584;
+ }
+ 
+ .linkedin {
+   text-align: center;
+   background-color: #323238;
+   border-radius: 5px;
+ }
+ 
+ .linkedin:hover {
+   background-color: #0072b1;
+ }
+ .twitter {
+   text-align: center;
+   background-color: #323238;
+   border-radius: 5px;
+ }
+ 
+ .twitter:hover {
+   background-color: #0072b1;
+ }
+
+
+/*
+.rocket {
+   position: absolute;
+   bottom: -600px;
+   left: 35%;
+   animation: fly 10s .5s ease-in;
 }
+
+@keyframes fly {
+   0% {
+       bottom: -600px;
+   }
+
+   100% {
+       bottom: 100%;
+   }
+}
+*/
+@media screen and (min-width: 600px) {
+   main {
+     background: url(https://raw.githubusercontent.com/birobirobiro/nlw-heat-origin-v2/main/images/background.webp)
+       no-repeat center/cover;
+     overflow: hidden;
+   }
+ 
+   .content {
+     background: url(images/background.png) no-repeat center/cover;
+     width: 28.75rem;
+     height: 40rem;
+     margin: 0 auto;
+ 
+     background: rgba(255, 255, 255, 0.05);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border-radius: 10px;
+     border: 1px solid rgba(255, 255, 255, 0.18);
+   }
+ 
+   .avatar {
+     margin: 4rem auto 0;
+   }
+ 
+   .content .badge {
+     display: block;
+     position: absolute;
+     z-index: 99999;
+     top: -22%;
+     left: 50%;
+     transform: translateX(-50%);
+   }
+ }

@@ -32,3 +32,14 @@ const linksSocialMedia ={
                 })
             }
             getGithubProfileInfos()
+            function loader() {
+                window.addEventListener("load", () => {
+                  const loader = document.querySelector(".loader");
+                  const content = document.querySelector(".content");
+                  loader.className += " hidden";
+                  content.className += " visible";
+                });
+              }
+              
+              loader();
+              setTimeout(loader, 1500);
