@@ -7,6 +7,11 @@
   <img alt="Chachá NLW Heat" src=".github/preview.gif" width="100%">
 </p>
 
+<p align="center">
+  <img alt="Chachá NLW Heat" src=".github/page.gif" width="100%">
+</p>
+
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
